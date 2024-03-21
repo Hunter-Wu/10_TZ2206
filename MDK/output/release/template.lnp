@@ -1,0 +1,28 @@
+--cpu Cortex-M0+
+".\output\release\main.o"
+".\output\release\bsp_adc.o"
+".\output\release\bsp_uart.o"
+".\output\release\key.o"
+".\output\release\ld_pwm.o"
+".\output\release\led.o"
+".\output\release\bsp_current_signal.o"
+".\output\release\bsp_output_signal.o"
+".\output\release\data_save.o"
+".\output\release\bsp_timer.o"
+".\output\release\ddl.o"
+".\output\release\sysctrl.o"
+".\output\release\adc.o"
+".\output\release\bgr.o"
+".\output\release\bt.o"
+".\output\release\gpio.o"
+".\output\release\lpm.o"
+".\output\release\pca.o"
+".\output\release\uart.o"
+".\output\release\flash.o"
+".\output\release\startup_hc32f005.o"
+".\output\release\system_hc32f005.o"
+".\output\release\interrupts_hc32f005.o"
+--strict --scatter ".\output\release\template.sct"
+--keep=*Handler --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\output\release\template.map" -o .\output\release\template.axf

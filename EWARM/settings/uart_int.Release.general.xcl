@@ -1,0 +1,13 @@
+"D:\Program Files (x86)\arm\bin\armproc.dll" 
+
+"D:\Program Files (x86)\arm\bin\armjlink2.dll" 
+
+"E:\work\10_TZ2206\software\project\EWARM\output\release\Exe\uart_int.out" 
+
+--plugin="D:\Program Files (x86)\arm\bin\armbat.dll" 
+
+--flash_loader="E:\work\10_TZ2206\software\project\EWARM\flashloader\HC32F005.board" 
+
+
+
+
