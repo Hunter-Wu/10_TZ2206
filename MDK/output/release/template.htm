@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\output\release\template.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\output\release\template.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6130100: Last Updated: Tue Mar 19 14:59:55 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6130100: Last Updated: Tue Mar 26 14:57:33 2024
 <BR><P>
 <H3>Maximum Stack Usage =        152 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -645,8 +645,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetBit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;signal_output_low_level
-<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;signal_output_high_level
+<BR>[Called By]<UL><LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;signal_output_low_level
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;signal_output_high_level
 <LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;power_led_on
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;power_led_off
 <LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;output_signal_init
@@ -1133,10 +1133,10 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[a1]"></a>current_protect</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, main.o(.text.current_protect))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = current_protect &rArr; signal_output_low_level &rArr; Gpio_WriteOutputIO
+<P><STRONG><a name="[a1]"></a>current_protect</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, main.o(.text.current_protect))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = current_protect &rArr; signal_output_high_level &rArr; Gpio_WriteOutputIO
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;signal_output_low_level
+<BR>[Calls]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;signal_output_high_level
 <LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;over_current_dec
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -1245,8 +1245,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_data_to_flash
 <LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart0_init
 <LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_start
+<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;switch_output
 <LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;power_led_on
-<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pnp_output
 <LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;output_signal_init
 <LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;object_detect
 <LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ld_pwm_init
@@ -1289,15 +1289,6 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;current_protect
 </UL>
 
-<P><STRONG><a name="[b4]"></a>pnp_output</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, main.o(.text.pnp_output))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = pnp_output &rArr; signal_output_low_level &rArr; Gpio_WriteOutputIO
-</UL>
-<BR>[Calls]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;signal_output_low_level
-<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;signal_output_high_level
-</UL>
-<BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-</UL>
-
 <P><STRONG><a name="[a0]"></a>power_led_init</STRONG> (Thumb, 46 bytes, Stack size 40 bytes, led.o(.text.power_led_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = power_led_init &rArr; Gpio_Init
 </UL>
@@ -1326,21 +1317,30 @@ Global Symbols
 <LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;func_led_output
 </UL>
 
-<P><STRONG><a name="[b7]"></a>signal_output_high_level</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, bsp_output_signal.o(.text.signal_output_high_level))
+<P><STRONG><a name="[a3]"></a>signal_output_high_level</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, bsp_output_signal.o(.text.signal_output_high_level))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = signal_output_high_level &rArr; Gpio_WriteOutputIO
 </UL>
 <BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gpio_WriteOutputIO
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pnp_output
+<BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;switch_output
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;current_protect
 </UL>
 
-<P><STRONG><a name="[a3]"></a>signal_output_low_level</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, bsp_output_signal.o(.text.signal_output_low_level))
+<P><STRONG><a name="[b7]"></a>signal_output_low_level</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, bsp_output_signal.o(.text.signal_output_low_level))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = signal_output_low_level &rArr; Gpio_WriteOutputIO
 </UL>
 <BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gpio_WriteOutputIO
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pnp_output
-<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;current_protect
+<BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;switch_output
+</UL>
+
+<P><STRONG><a name="[b4]"></a>switch_output</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, main.o(.text.switch_output))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = switch_output &rArr; signal_output_low_level &rArr; Gpio_WriteOutputIO
+</UL>
+<BR>[Calls]<UL><LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;signal_output_low_level
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;signal_output_high_level
+</UL>
+<BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[b8]"></a>timer0_timer_init</STRONG> (Thumb, 128 bytes, Stack size 40 bytes, bsp_timer.o(.text.timer0_timer_init))

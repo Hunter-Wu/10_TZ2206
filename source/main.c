@@ -75,7 +75,10 @@ void App_Rch4MHzTo24MHz(void)
 	Sysctrl_ClkInit(&pstcCfg);
 }
 
-void pnp_output(void)
+#define PNP 1
+#if PNP
+
+void switch_output(void)
 {
 	if( object_detected )
 	{
@@ -85,7 +88,19 @@ void pnp_output(void)
 		signal_output_high_level();
 	}
 }
-
+#else
+//npn output 
+void switch_output(void)
+{
+	if( object_detected )
+	{
+		signal_output_high_level();	
+	}else
+	{
+		signal_output_low_level();
+	}
+}
+#endif
 
 //检测物体的LED输出
 void act_led_output(void)
@@ -213,12 +228,9 @@ void func_led_display(void)
 
 void current_protect(void)
 {
-	if( OVER_CURRENT_NO == over_current_dec())
+	if( OVER_CURRENT_YES == over_current_dec())
 	{
-		signal_output_low_level();
-	}else
-	{
-		signal_output_low_level();
+		signal_output_high_level();
 	}
 }
 
@@ -259,8 +271,7 @@ int main(void)
 				power_led_on();
 				//act_led_on();
 				act_led_output();
-				pnp_output();
-				//PNP输出控制				
+				switch_output();				
 				break;
 			case	KEY_CALIB_DIS:// 距离信号标定
 							
