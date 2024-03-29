@@ -26,7 +26,7 @@ static void adc_cfg(void)
    
     stcAdcCfg.enAdcOpMode = AdcNormalMode;          //单次采样模式
     stcAdcCfg.enAdcClkSel = AdcClkSysTDiv2;         //PCLK
-    stcAdcCfg.enAdcSampTimeSel = AdcSampTime8Clk;   //4个采样时钟
+    stcAdcCfg.enAdcSampTimeSel = AdcSampTime4Clk; //AdcSampTime8Clk;   //4个采样时钟
     stcAdcCfg.enAdcRefVolSel = RefVolSelAVDD;   	//参考电压:内部2.5V(avdd>3V,SPS<=200kHz)  SPS速率 = ADC时钟 / (采样时钟 + 16CLK) 
     stcAdcCfg.bAdcInBufEn = FALSE;                  //电压跟随器如果使能，SPS采样速率 <=200K
     stcAdcCfg.u32AdcRegHighThd = 0u;                //比较阈值上门限
@@ -56,12 +56,12 @@ static void App_AdcInit(void)
     Bgr_BgrEnable();
     
     stcAdcCfg.enAdcOpMode = AdcNormalMode;               
-    stcAdcCfg.enAdcClkSel = AdcClkSysTDiv8;  //AdcClkSysTDiv4;             
-    stcAdcCfg.enAdcSampTimeSel = AdcSampTime8Clk;    //AdcSampTime8Clk;       
+    stcAdcCfg.enAdcClkSel = AdcClkSysTDiv8;         
+    stcAdcCfg.enAdcSampTimeSel = AdcSampTime8Clk;      
     stcAdcCfg.enAdcRefVolSel = RefVolSelAVDD;           
     stcAdcCfg.bAdcInBufEn = FALSE;                      
-    stcAdcCfg.enAdcTrig0Sel = AdcTrigDisable;//   AdcTrigPCA;          
-    stcAdcCfg.enAdcTrig1Sel = AdcTrigPCA    ;
+    stcAdcCfg.enAdcTrig0Sel = AdcTrigDisable;//AdcTrigPCA;          
+    stcAdcCfg.enAdcTrig1Sel = AdcTrigPCA;
     Adc_Init(&stcAdcCfg);    
     
     stcAdcIrq.bAdcIrq    = FALSE;                            
@@ -83,9 +83,7 @@ static void App_AdcInit(void)
 }
 
 void adc_init(void)
-{
-//	adc_pin_init();
-//	adc_cfg();	
+{	
 	App_AdcInit();
 }
 
@@ -135,8 +133,6 @@ void Adc_IRQHandler(void)
 	cnt++;
 	if(cnt%2)
 	{
-		Adc_GetCH8Result(&u16Adc_ch8_Result);
-//		sprintf(buf,"adc :%d cnt %d \n", u16Adc_ch8_Result,cnt);
-//		uart0_send_data((unsigned char *)buf, strlen(buf));		
+		Adc_GetCH8Result(&u16Adc_ch8_Result);	
 	}		
 }

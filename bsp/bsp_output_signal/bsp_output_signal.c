@@ -25,10 +25,10 @@ void output_signal_init(void)
 
 void signal_output_low_level(void)
 {
-	Gpio_WriteOutputIO(CONTROL_SIGNAL_PORT, CONTROL_SIGNAL_PIN, TRUE);
+	Gpio_WriteOutputIO(CONTROL_SIGNAL_PORT, CONTROL_SIGNAL_PIN,FALSE);
 }
 
 void signal_output_high_level(void)
 {
-	Gpio_WriteOutputIO(CONTROL_SIGNAL_PORT, CONTROL_SIGNAL_PIN, FALSE);
+	Gpio_WriteOutputIO(CONTROL_SIGNAL_PORT, CONTROL_SIGNAL_PIN, TRUE);
 }

@@ -10,12 +10,16 @@
 #include "bsp_timer.h"
 #include "data_save.h"
 #define MAX_DISTANCE_DETECT		2000
-#define MIN_DETECT_VOL     1070 // 5CM 对应865mv(透明体-烟盒塑料)
+//#define MIN_DETECT_VOL     1070 // 5CM 对应865mv(透明体-烟盒塑料)
 //#define MIN_DETECT_VOL     1427 // 50CM 对应1150mv(无遮挡)
 //#define MIN_DETECT_VOL     1961 // 50CM 对应1580mv(透明体-烟盒塑料)
 
 //#define MAX_DETECT_VOL 	   2500 // 2M 对应2500mv(透明体-烟盒塑料)(待测)
-#define MAX_DETECT_VOL     1961 // 50CM 对应1580mv(透明体-烟盒塑料)
+
+//1241   = 1000mv
+#define MIN_DETECT_VOL     41  // 2CM 对应33mv(none
+#define MAX_DETECT_VOL     1117 // 50CM 对应900mv(none
+#define MIN_DETECT_REF     496  //400mv
 
 #define NC_OUT	 	1
 #define NO_OUT 		0
@@ -40,9 +44,6 @@ uint16_t	adc_ch5_result = 0;
 uint16_t	detect_distance	= MAX_DISTANCE_DETECT;
 uint16_t	object_vol_min  = MAX_DETECT_VOL;
 uint16_t	object_vol_max  = MAX_DETECT_VOL;
-
-uint32_t 	add_detect_vol_min =  0x3f00;
-uint32_t	add_no_nc_state =     0x3f04;
 
 
 
@@ -75,29 +76,46 @@ void App_Rch4MHzTo24MHz(void)
 	Sysctrl_ClkInit(&pstcCfg);
 }
 
-#define PNP 1
+#define PNP 0
 #if PNP
 
+void current_protect(void)
+{
+	if( OVER_CURRENT_YES == over_current_dec())
+	{
+		signal_output_low_level();
+	}
+}
 void switch_output(void)
 {
 	if( object_detected )
 	{
-		signal_output_low_level();
+		signal_output_high_level();
 	}else
 	{
-		signal_output_high_level();
+		signal_output_low_level();
+
 	}
 }
 #else
+
+void current_protect(void)
+{
+	if( OVER_CURRENT_NO == over_current_dec())
+	{
+		signal_output_low_level();	
+	}
+}
+
 //npn output 
 void switch_output(void)
 {
 	if( object_detected )
 	{
-		signal_output_high_level();	
+		signal_output_high_level();
 	}else
-	{
-		signal_output_low_level();
+	{		
+		signal_output_low_level();	
 	}
 }
 #endif
@@ -116,7 +134,7 @@ void act_led_output(void)
 		}	
 	}else
 	{
-		if (no_nc_state==NO_OUT)
+		if (no_nc_state == NO_OUT)
 		{
 			act_led_off();
 		}else if(no_nc_state == NC_OUT)
@@ -154,16 +172,18 @@ void func_led_output(void)
 	}
 }
 
+#define N 4
+
 //物体检测函数
 void object_detect(void)
 {
-	static char cnt = 0;
-	if( u16Adc_ch8_Result >object_vol_min )
+	static char cnt = 0;	
+	if( (u16Adc_ch8_Result - object_vol_min )> MIN_DETECT_REF )
 	{
 		cnt ++;
-		if(cnt>3)
+		if(cnt > N)
 		{		
-//			sprintf(buf,"detected cnt:%d \n\r",  cnt);
+//			sprintf(buf,"detected Result:%d \n\r",  u16Adc_ch8_Result);
 //			uart0_send_data((unsigned char *)buf, strlen(buf));
 			object_detected = 1;
 			return ;
@@ -182,13 +202,14 @@ void object_detect(void)
 char detect_dis_set()
 {
 	static char cnt = 0;
+	static uint16_t adc_res_set = 0;
 	if( u16Adc_ch8_Result < object_vol_max )
 	{
 		cnt ++;
-		if(cnt>3)
-		{
-			
-			object_vol_min = u16Adc_ch8_Result+50;
+		adc_res_set += u16Adc_ch8_Result;
+		if(cnt > N)
+		{			
+			object_vol_min = adc_res_set/N ;
 //			sprintf(buf,"set cnt:%d \n\r",  cnt);
 //			uart0_send_data((unsigned char *)buf, strlen(buf));
 			return 1;
@@ -197,6 +218,7 @@ char detect_dis_set()
 	else
 	{
 		cnt = 0;
+		adc_res_set = 0;
 //		sprintf(buf,"set cnt:%d \n\r",  cnt);
 //		uart0_send_data((unsigned char *)buf, strlen(buf));
 		object_vol_min = MAX_DETECT_VOL;
@@ -204,7 +226,6 @@ char detect_dis_set()
 	}	
 	return 0;
 }
-
 
 void func_led_display(void)
 {	
@@ -224,19 +245,28 @@ void func_led_display(void)
 		}
 	}		
 }
-
-
-void current_protect(void)
+//0000  0000  0000  0000    0001 0000 0000 0000     
+//15 - 31bit  no_nc state   0-15bit object_vol_min 4096 = 3300 mv 
+void check_update_data(void)
 {
-	if( OVER_CURRENT_YES == over_current_dec())
+	uint32_t data = read_data_from_flash(add_detect_vol_min);
+	
+	if( (data & 0x0000ffff) >= 4096)
 	{
-		signal_output_high_level();
+		data = object_vol_min + (no_nc_state<< 16);
+		write_data_to_flash(add_detect_vol_min,data);	
+	}
+	else
+	{
+		object_vol_min = data & 0x0000ffff;
+		no_nc_state    = data >>16; 
 	}
 }
 
 int main(void)
 {	
 	char key_func;
+	uint32_t data = 0;
 	App_Rch4MHzTo24MHz();
 	all_led_init();
 	uart0_init();
@@ -247,15 +277,15 @@ int main(void)
 	current_signal_init();
 	while(Ok != Flash_Init(1))
     {
-        check_update_data();
+        
     }
+	check_update_data();
 	//1 flash存储按键设置的数据:产品检测距离、NO/NC状态
 	//2 读取adc数据 对数据分析处理 返回处理结果
 	//3 根据处理结果做出状态指示和信号输出空载
 
 	while (1)
-	{	
-		current_protect();	//过流保护	
+	{				
 		key_func = get_key_state();
 		//保持蓝光信号持续稳定的输出
 //		if(last_key_func)
@@ -271,7 +301,8 @@ int main(void)
 				power_led_on();
 				//act_led_on();
 				act_led_output();
-				switch_output();				
+				switch_output();
+				current_protect();	//过流保护			
 				break;
 			case	KEY_CALIB_DIS:// 距离信号标定
 							
@@ -289,7 +320,8 @@ int main(void)
 							timer_start(4);
 							led_sync = 1;
 						}
-						write_data_to_flash(add_detect_vol_min,object_vol_min);	
+						data = object_vol_min + (no_nc_state<< 16);
+						write_data_to_flash(add_detect_vol_min,data);	
 					}
 					else
 					{
@@ -307,7 +339,8 @@ int main(void)
 					timer_start(2);
 					led_sync = 1;
 					no_nc_state = !no_nc_state;
-					write_data_to_flash(add_no_nc_state,no_nc_state);
+					data = object_vol_min + (no_nc_state<< 16);
+					write_data_to_flash(add_detect_vol_min,data);	
 				}
 				else
 				{

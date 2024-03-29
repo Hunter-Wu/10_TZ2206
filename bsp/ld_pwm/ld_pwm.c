@@ -7,9 +7,9 @@
 #define PWM_PORT		GpioPort2
 #define PWM_PIN			GpioPin4
 
-char pulse = 3;
+uint16_t pulse = 9;
 
-uint16_t pulse_cir = 4096;
+uint16_t pulse_cir = 300;//249;//100us;200;//80us;
 
 static void pwm_pin_init(void)
 {	
@@ -32,7 +32,7 @@ static void pca_init(void)
 
 	Sysctrl_SetPeripheralGate(SysctrlPeripheralPca, TRUE);
 	
-	PcaInitStruct.pca_clksrc = PcaPclkdiv32;
+	PcaInitStruct.pca_clksrc = PcaPclkdiv8;
 	PcaInitStruct.pca_cidl   = FALSE;
 	#if 0
 	
