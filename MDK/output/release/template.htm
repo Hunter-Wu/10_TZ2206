@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\output\release\template.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\output\release\template.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6130100: Last Updated: Fri Mar 29 14:45:02 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6130100: Last Updated: Fri Apr 12 16:46:17 2024
 <BR><P>
 <H3>Maximum Stack Usage =        152 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -273,8 +273,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[22]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sputc
 <LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_common
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_stop
-<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_start
+<BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_stop
+<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_start
 </UL>
 
 <P><STRONG><a name="[43]"></a>__printf</STRONG> (Thumb, 108 bytes, Stack size 24 bytes, __printf.o(.text))
@@ -300,8 +300,8 @@ Global Symbols
 <P><STRONG><a name="[be]"></a>strlen</STRONG> (Thumb, 62 bytes, Stack size 12 bytes, strlen.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = strlen
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_stop
-<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_start
+<BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_stop
+<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_start
 </UL>
 
 <P><STRONG><a name="[4a]"></a>_memset_w</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, rt_memclr.o(.text))
@@ -318,14 +318,14 @@ Global Symbols
 <P><STRONG><a name="[4b]"></a>__aeabi_memclr</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, rt_memclr.o(.text))
 <BR><BR>[Calls]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_memset
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_stop
-<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_start
+<BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_stop
+<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_start
 </UL>
 
 <P><STRONG><a name="[e8]"></a>__rt_memclr</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, rt_memclr.o(.text), UNUSED)
 
 <P><STRONG><a name="[65]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, rt_memclr.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;output_signal_init
+<BR><BR>[Called By]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;output_signal_init
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Flash_Init
 <LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;power_led_init
 <LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;act_led_init
@@ -339,6 +339,7 @@ Global Symbols
 
 <P><STRONG><a name="[8f]"></a>__aeabi_uidiv</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, aeabi_sdiv.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Uart_SetBaudRate
+<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;detect_dis_set
 <LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay1ms
 <LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay10us
 </UL>
@@ -511,7 +512,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[bc]"></a>Bt_ARRSet</STRONG> (Thumb, 64 bytes, Stack size 0 bytes, bt.o(.text.Bt_ARRSet))
-<BR><BR>[Called By]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart0_init
+<BR><BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart0_init
 <LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer0_timer_init
 </UL>
 
@@ -521,12 +522,12 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[bd]"></a>Bt_Cnt16Set</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, bt.o(.text.Bt_Cnt16Set))
-<BR><BR>[Called By]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart0_init
+<BR><BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart0_init
 <LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer0_timer_init
 </UL>
 
 <P><STRONG><a name="[c2]"></a>Bt_DisableIrq</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, bt.o(.text.Bt_DisableIrq))
-<BR><BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_stop
+<BR><BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_stop
 </UL>
 
 <P><STRONG><a name="[bb]"></a>Bt_EnableIrq</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, bt.o(.text.Bt_EnableIrq))
@@ -536,17 +537,17 @@ Global Symbols
 <P><STRONG><a name="[ba]"></a>Bt_Init</STRONG> (Thumb, 128 bytes, Stack size 16 bytes, bt.o(.text.Bt_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = Bt_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart0_init
+<BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart0_init
 <LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer0_timer_init
 </UL>
 
 <P><STRONG><a name="[c0]"></a>Bt_Run</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, bt.o(.text.Bt_Run))
-<BR><BR>[Called By]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart0_init
-<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_start
+<BR><BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart0_init
+<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_start
 </UL>
 
 <P><STRONG><a name="[c1]"></a>Bt_Stop</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, bt.o(.text.Bt_Stop))
-<BR><BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_stop
+<BR><BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_stop
 </UL>
 
 <P><STRONG><a name="[1f]"></a>CLKTRIM_IRQHandler</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, interrupts_hc32f005.o(.text.CLKTRIM_IRQHandler))
@@ -565,8 +566,8 @@ Global Symbols
 <P><STRONG><a name="[9d]"></a>EnableNvic</STRONG> (Thumb, 136 bytes, Stack size 16 bytes, interrupts_hc32f005.o(.text.EnableNvic))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = EnableNvic
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart0_init
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ld_pwm_init
+<BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart0_init
+<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ld_pwm_init
 <LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adc_init
 <LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer0_timer_init
 </UL>
@@ -612,24 +613,24 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetBit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;over_current_dec
-<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_key_state
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_key_state
 </UL>
 
 <P><STRONG><a name="[94]"></a>Gpio_Init</STRONG> (Thumb, 112 bytes, Stack size 32 bytes, gpio.o(.text.Gpio_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = Gpio_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart0_init
-<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;output_signal_init
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ld_pwm_init
-<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;key_init
+<BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart0_init
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;output_signal_init
+<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ld_pwm_init
+<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;key_init
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;current_signal_init
 <LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;power_led_init
 <LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;act_led_init
 </UL>
 
-<P><STRONG><a name="[b1]"></a>Gpio_SetAfMode</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, gpio.o(.text.Gpio_SetAfMode))
-<BR><BR>[Called By]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart0_init
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ld_pwm_init
+<P><STRONG><a name="[b2]"></a>Gpio_SetAfMode</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, gpio.o(.text.Gpio_SetAfMode))
+<BR><BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart0_init
+<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ld_pwm_init
 </UL>
 
 <P><STRONG><a name="[68]"></a>Gpio_SetAnalogMode</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, gpio.o(.text.Gpio_SetAnalogMode))
@@ -647,9 +648,9 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;signal_output_low_level
 <LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;signal_output_high_level
-<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;power_led_on
-<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;power_led_off
-<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;output_signal_init
+<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;power_led_on
+<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;power_led_off
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;output_signal_init
 <LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;act_led_on
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;act_led_off
 <LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;power_led_init
@@ -717,7 +718,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> startup_hc32f005.o(RESET)
 </UL>
 <P><STRONG><a name="[77]"></a>Pca_ClrItStatus</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, pca.o(.text.Pca_ClrItStatus))
-<BR><BR>[Called By]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ld_pwm_init
+<BR><BR>[Called By]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ld_pwm_init
 <LI><a href="#[29]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Pca_IRQHandler
 </UL>
 
@@ -726,7 +727,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetBit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ld_pwm_init
+<BR>[Called By]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ld_pwm_init
 </UL>
 
 <P><STRONG><a name="[72]"></a>Pca_ConfPcaIt</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, pca.o(.text.Pca_ConfPcaIt))
@@ -734,7 +735,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetBit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ld_pwm_init
+<BR>[Called By]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ld_pwm_init
 </UL>
 
 <P><STRONG><a name="[76]"></a>Pca_GetItStatus</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, pca.o(.text.Pca_GetItStatus))
@@ -753,10 +754,10 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[17]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PCA_IRQHandler
 </UL>
 
-<P><STRONG><a name="[b2]"></a>Pca_M1Init</STRONG> (Thumb, 184 bytes, Stack size 16 bytes, pca.o(.text.Pca_M1Init))
+<P><STRONG><a name="[b3]"></a>Pca_M1Init</STRONG> (Thumb, 184 bytes, Stack size 16 bytes, pca.o(.text.Pca_M1Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = Pca_M1Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ld_pwm_init
+<BR>[Called By]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ld_pwm_init
 </UL>
 
 <P><STRONG><a name="[75]"></a>Pca_SetCcap</STRONG> (Thumb, 92 bytes, Stack size 0 bytes, pca.o(.text.Pca_SetCcap))
@@ -777,7 +778,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetBit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ld_pwm_init
+<BR>[Called By]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ld_pwm_init
 <LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Pca_SetCnt
 <LI><a href="#[29]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Pca_IRQHandler
 </UL>
@@ -839,7 +840,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sysctrl_GetHClkFreq
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart0_init
+<BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart0_init
 </UL>
 
 <P><STRONG><a name="[7a]"></a>Sysctrl_SetHCLKDiv</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, sysctrl.o(.text.Sysctrl_SetHCLKDiv))
@@ -855,9 +856,9 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetBit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;output_signal_init
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ld_pwm_init
-<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;key_init
+<BR>[Called By]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;output_signal_init
+<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ld_pwm_init
+<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;key_init
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;current_signal_init
 <LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;all_led_init
 <LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adc_init
@@ -984,7 +985,7 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Uart_SendDataPoll
 <LI><a href="#[28]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Uart1_IRQHandler
-<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart0_init
+<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart0_init
 </UL>
 
 <P><STRONG><a name="[8a]"></a>Uart_EnableFunc</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, uart.o(.text.Uart_EnableFunc))
@@ -1000,7 +1001,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetBit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart0_init
+<BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart0_init
 </UL>
 
 <P><STRONG><a name="[87]"></a>Uart_GetStatus</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, uart.o(.text.Uart_GetStatus))
@@ -1016,7 +1017,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Uart_EnableFunc
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart0_init
+<BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart0_init
 </UL>
 
 <P><STRONG><a name="[89]"></a>Uart_ReceiveData</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, uart.o(.text.Uart_ReceiveData))
@@ -1037,7 +1038,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidiv
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart0_init
+<BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart0_init
 </UL>
 
 <P><STRONG><a name="[1b]"></a>VC0_IRQHandler</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, interrupts_hc32f005.o(.text.VC0_IRQHandler))
@@ -1076,8 +1077,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gpio_WriteOutputIO
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;func_led_output
-<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;func_led_display
+<BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;func_led_output
+<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;func_led_display
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;act_led_output
 </UL>
 
@@ -1086,7 +1087,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gpio_WriteOutputIO
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;func_led_output
+<BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;func_led_output
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;act_led_output
 </UL>
 
@@ -1138,7 +1139,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[a4]"></a>current_protect</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, main.o(.text.current_protect))
+<P><STRONG><a name="[a4]"></a>current_protect</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, main.o(.text.current_protect))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = current_protect &rArr; signal_output_low_level &rArr; Gpio_WriteOutputIO
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;signal_output_low_level
@@ -1157,7 +1158,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[25]"></a>ddl_memclr</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, ddl.o(.text.ddl_memclr))
-<BR><BR>[Called By]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ld_pwm_init
+<BR><BR>[Called By]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ld_pwm_init
 <LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer0_timer_init
 </UL>
 <BR>[Address Reference Count : 2]<UL><LI> bsp_uart.o(.text.uart0_init)
@@ -1179,47 +1180,49 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;App_Rch4MHzTo24MHz
 </UL>
 
-<P><STRONG><a name="[b7]"></a>detect_dis_set</STRONG> (Thumb, 68 bytes, Stack size 8 bytes, main.o(.text.detect_dis_set))
+<P><STRONG><a name="[a8]"></a>detect_dis_set</STRONG> (Thumb, 76 bytes, Stack size 8 bytes, main.o(.text.detect_dis_set))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = detect_dis_set
+</UL>
+<BR>[Calls]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidiv
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[a8]"></a>func_led_display</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, main.o(.text.func_led_display))
+<P><STRONG><a name="[a9]"></a>func_led_display</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, main.o(.text.func_led_display))
 <BR><BR>[Stack]<UL><LI>Max Depth = 144 + Unknown Stack Size
 <LI>Call Chain = func_led_display &rArr; timer_stop &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_stop
-<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;power_led_off
-<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;func_led_output
+<BR>[Calls]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_stop
+<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;power_led_off
+<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;func_led_output
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;act_led_off
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[ab]"></a>func_led_output</STRONG> (Thumb, 64 bytes, Stack size 8 bytes, main.o(.text.func_led_output))
+<P><STRONG><a name="[ac]"></a>func_led_output</STRONG> (Thumb, 64 bytes, Stack size 8 bytes, main.o(.text.func_led_output))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = func_led_output &rArr; power_led_on &rArr; Gpio_WriteOutputIO
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;power_led_on
-<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;power_led_off
+<BR>[Calls]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;power_led_on
+<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;power_led_off
 <LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;act_led_on
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;act_led_off
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;func_led_display
+<BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;func_led_display
 </UL>
 
-<P><STRONG><a name="[ad]"></a>get_key_state</STRONG> (Thumb, 120 bytes, Stack size 8 bytes, key.o(.text.get_key_state))
+<P><STRONG><a name="[ae]"></a>get_key_state</STRONG> (Thumb, 120 bytes, Stack size 8 bytes, key.o(.text.get_key_state))
 <BR><BR>[Stack]<UL><LI>Max Depth = 144 + Unknown Stack Size
 <LI>Call Chain = get_key_state &rArr; timer_stop &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gpio_GetInputIO
-<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_stop
-<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_start
+<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_stop
+<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_start
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[af]"></a>key_init</STRONG> (Thumb, 40 bytes, Stack size 32 bytes, key.o(.text.key_init))
+<P><STRONG><a name="[b0]"></a>key_init</STRONG> (Thumb, 40 bytes, Stack size 32 bytes, key.o(.text.key_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = key_init &rArr; Gpio_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gpio_Init
@@ -1228,16 +1231,16 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[b0]"></a>ld_pwm_init</STRONG> (Thumb, 144 bytes, Stack size 64 bytes, ld_pwm.o(.text.ld_pwm_init))
+<P><STRONG><a name="[b1]"></a>ld_pwm_init</STRONG> (Thumb, 144 bytes, Stack size 64 bytes, ld_pwm.o(.text.ld_pwm_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = ld_pwm_init &rArr; Gpio_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gpio_SetAfMode
+<BR>[Calls]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gpio_SetAfMode
 <LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gpio_Init
 <LI><a href="#[25]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ddl_memclr
 <LI><a href="#[26]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sysctrl_SetPeripheralGate
 <LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EnableNvic
 <LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Pca_StartPca
-<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Pca_M1Init
+<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Pca_M1Init
 <LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Pca_ConfPcaIt
 <LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Pca_ConfModulexIt
 <LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Pca_ClrItStatus
@@ -1250,17 +1253,17 @@ Global Symbols
 <LI>Call Chain = main &rArr; get_key_state &rArr; timer_stop &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_data_to_flash
-<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart0_init
-<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_start
-<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;switch_output
-<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;power_led_on
-<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;output_signal_init
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;object_detect
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ld_pwm_init
-<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;key_init
-<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_key_state
-<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;func_led_display
-<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;detect_dis_set
+<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart0_init
+<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_start
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;switch_output
+<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;power_led_on
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;output_signal_init
+<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;object_detect
+<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ld_pwm_init
+<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;key_init
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_key_state
+<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;func_led_display
+<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;detect_dis_set
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;current_signal_init
 <LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;current_protect
 <LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_update_data
@@ -1273,11 +1276,11 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
 
-<P><STRONG><a name="[b5]"></a>object_detect</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, main.o(.text.object_detect))
+<P><STRONG><a name="[b6]"></a>object_detect</STRONG> (Thumb, 44 bytes, Stack size 0 bytes, main.o(.text.object_detect))
 <BR><BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[b4]"></a>output_signal_init</STRONG> (Thumb, 56 bytes, Stack size 48 bytes, bsp_output_signal.o(.text.output_signal_init))
+<P><STRONG><a name="[b5]"></a>output_signal_init</STRONG> (Thumb, 56 bytes, Stack size 48 bytes, bsp_output_signal.o(.text.output_signal_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = output_signal_init &rArr; Gpio_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gpio_Init
@@ -1306,22 +1309,22 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;all_led_init
 </UL>
 
-<P><STRONG><a name="[aa]"></a>power_led_off</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, led.o(.text.power_led_off))
+<P><STRONG><a name="[ab]"></a>power_led_off</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, led.o(.text.power_led_off))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = power_led_off &rArr; Gpio_WriteOutputIO
 </UL>
 <BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gpio_WriteOutputIO
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;func_led_output
-<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;func_led_display
+<BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;func_led_output
+<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;func_led_display
 </UL>
 
-<P><STRONG><a name="[ac]"></a>power_led_on</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, led.o(.text.power_led_on))
+<P><STRONG><a name="[ad]"></a>power_led_on</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, led.o(.text.power_led_on))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = power_led_on &rArr; Gpio_WriteOutputIO
 </UL>
 <BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gpio_WriteOutputIO
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;func_led_output
+<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;func_led_output
 </UL>
 
 <P><STRONG><a name="[a2]"></a>read_data_from_flash</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, data_save.o(.text.read_data_from_flash))
@@ -1333,7 +1336,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gpio_WriteOutputIO
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;switch_output
+<BR>[Called By]<UL><LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;switch_output
 </UL>
 
 <P><STRONG><a name="[a6]"></a>signal_output_low_level</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, bsp_output_signal.o(.text.signal_output_low_level))
@@ -1341,11 +1344,11 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gpio_WriteOutputIO
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;switch_output
+<BR>[Called By]<UL><LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;switch_output
 <LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;current_protect
 </UL>
 
-<P><STRONG><a name="[b6]"></a>switch_output</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, main.o(.text.switch_output))
+<P><STRONG><a name="[b7]"></a>switch_output</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, main.o(.text.switch_output))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = switch_output &rArr; signal_output_low_level &rArr; Gpio_WriteOutputIO
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;signal_output_low_level
@@ -1365,10 +1368,10 @@ Global Symbols
 <LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bt_EnableIrq
 <LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bt_ClearIntFlag
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_start
+<BR>[Called By]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_start
 </UL>
 
-<P><STRONG><a name="[ae]"></a>timer_start</STRONG> (Thumb, 92 bytes, Stack size 16 bytes, bsp_timer.o(.text.timer_start))
+<P><STRONG><a name="[af]"></a>timer_start</STRONG> (Thumb, 92 bytes, Stack size 16 bytes, bsp_timer.o(.text.timer_start))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136 + Unknown Stack Size
 <LI>Call Chain = timer_start &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
@@ -1380,10 +1383,10 @@ Global Symbols
 <LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_key_state
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_key_state
 </UL>
 
-<P><STRONG><a name="[a9]"></a>timer_stop</STRONG> (Thumb, 100 bytes, Stack size 16 bytes, bsp_timer.o(.text.timer_stop))
+<P><STRONG><a name="[aa]"></a>timer_stop</STRONG> (Thumb, 100 bytes, Stack size 16 bytes, bsp_timer.o(.text.timer_stop))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136 + Unknown Stack Size
 <LI>Call Chain = timer_stop &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
@@ -1394,11 +1397,11 @@ Global Symbols
 <LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 <LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_key_state
-<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;func_led_display
+<BR>[Called By]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_key_state
+<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;func_led_display
 </UL>
 
-<P><STRONG><a name="[b3]"></a>uart0_init</STRONG> (Thumb, 224 bytes, Stack size 72 bytes, bsp_uart.o(.text.uart0_init))
+<P><STRONG><a name="[b4]"></a>uart0_init</STRONG> (Thumb, 224 bytes, Stack size 72 bytes, bsp_uart.o(.text.uart0_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = uart0_init &rArr; Gpio_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Uart_SetBaudRate
@@ -1406,7 +1409,7 @@ Global Symbols
 <LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Uart_EnableIrq
 <LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Uart_ClrStatus
 <LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sysctrl_GetPClkFreq
-<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gpio_SetAfMode
+<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gpio_SetAfMode
 <LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gpio_Init
 <LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bt_Run
 <LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bt_Init
@@ -1422,8 +1425,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Uart_SendDataPoll
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_stop
-<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_start
+<BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_stop
+<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_start
 </UL>
 
 <P><STRONG><a name="[a3]"></a>write_data_to_flash</STRONG> (Thumb, 46 bytes, Stack size 16 bytes, data_save.o(.text.write_data_to_flash))

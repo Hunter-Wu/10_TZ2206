@@ -18,8 +18,8 @@
 
 //1241   = 1000mv
 #define MIN_DETECT_VOL     41  // 2CM 对应33mv(none
-#define MAX_DETECT_VOL     1117 // 50CM 对应900mv(none
-#define MIN_DETECT_REF     496  //400mv
+#define MAX_DETECT_VOL     3500 // 3680 =2.9v 全部遮挡
+#define MIN_DETECT_REF     248  //200mv
 
 #define NC_OUT	 	1
 #define NO_OUT 		0
@@ -76,7 +76,7 @@ void App_Rch4MHzTo24MHz(void)
 	Sysctrl_ClkInit(&pstcCfg);
 }
 
-#define PNP 0
+#define PNP 1
 #if PNP
 
 void current_protect(void)
@@ -202,14 +202,16 @@ void object_detect(void)
 char detect_dis_set()
 {
 	static char cnt = 0;
-	static uint16_t adc_res_set = 0;
+	static uint32_t adc_res_set = 0;
 	if( u16Adc_ch8_Result < object_vol_max )
 	{
 		cnt ++;
 		adc_res_set += u16Adc_ch8_Result;
 		if(cnt > N)
 		{			
-			object_vol_min = adc_res_set/N ;
+			object_vol_min = adc_res_set/cnt;
+			cnt = 0;
+			adc_res_set = 0;
 //			sprintf(buf,"set cnt:%d \n\r",  cnt);
 //			uart0_send_data((unsigned char *)buf, strlen(buf));
 			return 1;
